@@ -1,0 +1,138 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=VideoAvi
+		DocIcon=DropMoviePlayer.xojo_resources;&h0
+		Extension=.avi;.vfw
+		Flags=&h1
+		MacCreator=????
+		MacType=????
+		Name=video/avi
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoFlc
+		DocIcon=DropMoviePlayer.xojo_resources;&h66C
+		Extension=.flc;.fli
+		Flags=&h1
+		MacCreator=TVOD
+		MacType=FLI 
+		Name=video/flc
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoMpeg
+		DocIcon=DropMoviePlayer.xojo_resources;&hCD8
+		Extension=.mpe;.m15;.m1s;.m1v;.m75;.mpeg;.mpg;.m1a;.mp2;.mpm;.mpv;.mpa
+		Flags=&h1
+		MacCreator=????
+		MacType=MPEG
+		Name=video/mpeg
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoMsvideo
+		DocIcon=DropMoviePlayer.xojo_resources;&h1344
+		Extension=.avi;.vfw
+		Flags=&h1
+		MacCreator=????
+		MacType=????
+		Name=video/msvideo
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoQuicktime
+		DocIcon=DropMoviePlayer.xojo_resources;&h19B0
+		Extension=.moov;.mov;.qt
+		Flags=&h1
+		MacCreator=TVOD
+		MacType=MooV
+		Name=video/quicktime
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXDv
+		DocIcon=DropMoviePlayer.xojo_resources;&h201C
+		Extension=.dif;.dv
+		Flags=&h1
+		MacCreator=TVOD
+		MacType=dvc!
+		Name=video/x-dv
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXMpeg
+		DocIcon=DropMoviePlayer.xojo_resources;&h2688
+		Extension=.mpeg;.mpg;.m1s;.m1v;.m1a;.m75;.m15;.mp2;.mpm;.mpv;.mpa
+		Flags=&h1
+		MacCreator=????
+		MacType=????
+		Name=video/x-mpeg
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXMsvideo
+		DocIcon=DropMoviePlayer.xojo_resources;&h2CF4
+		Extension=.avi;.vfw
+		Flags=&h1
+		MacCreator=????
+		MacType=VfW 
+		Name=video/x-msvideo
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

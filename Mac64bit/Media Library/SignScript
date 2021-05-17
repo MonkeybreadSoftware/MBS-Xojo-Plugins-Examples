@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Please change path and name of certificate
+
+cd "/Users/cs/Desktop/Builds - Media Library.xojo_binary_project/OS X 64 bit/"
+
+xattr -r -d com.apple.FinderInfo Media\ Library.app
+codesign -f -s "Developer ID Application: Christian Schmitz Software GmbH" Media\ Library.app/Contents/Frameworks/*
+codesign --entitlements /Users/cs/Desktop/test.entitlements -f -s "Developer ID Application: Christian Schmitz Software GmbH" Media\ Library.app
+
+spctl -a -v Media\ Library.app

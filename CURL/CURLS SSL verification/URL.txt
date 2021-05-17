@@ -1,0 +1,4 @@
+Download pem file here:
+
+http://curl.haxx.se/ca/cacert.pem
+

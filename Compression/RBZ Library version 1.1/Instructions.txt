@@ -1,0 +1,313 @@
+RBZ Library version 1.1
+
+
+Test Application
+-----------------------------------------------------------
+
+The RBZ test application performs the basic functions of zip archive creation and browsing. The application demonstrates the main features of the RBZ library, including the ability to browse archives hierarchically, and asyncronous compression and decompression using threads. The application has the following interface controls:
+
+New Archive
+
+  Create a new empty archive.
+
+Open Archive
+
+  Open an existing archive for  browsing. The archive contents will be
+  displayed in the window.
+
+Add Directory
+ 
+  Open a directory and add it to the currently open archive.
+
+Add File
+
+  Open a file and add it to the currently open archive.
+
+Delete Item
+
+  Remove the currently selected file or directory from the archive.
+
+Expand Item
+
+  Expand the currently selected file or directory.
+
+
+FolderItem Functions
+-----------------------------------------------------------
+
+As a convenience, the RBZ library defines some functions that extend the
+FolderItem class:
+
+createAsZipArchive () as ZipArchive
+
+  Create an empty zip archive from the folder item. If the file already
+  exists then it will be deleted.
+
+openAsZipArchive () as ZipArchive
+
+  Open an existing zip archive file. If the file does not exist then it
+  will be created as a new empty archive.
+
+unzip (destination as FolderItem, [options as ExpansionOptions])
+
+  Decompress a zip archive into the destination directory. The optional
+  'options' parameter allows you to specify decompression options, such as
+  how file name clashes in the destination directory will be resolved.
+
+zip (archive as folderitem, [comment as String], [options as CompressionOptions])
+
+  Zip the file or folder into an archive specified by the 'archive'
+  parameter. If the archive file does not exist then it will be created,
+  otherwise the file will be added at the root level of the archive. A
+  comment can be optionally added for the file. Compression options may
+  also be specified, otherwise the defaults will be used.
+
+
+Classes
+-----------------------------------------------------------
+
+ZipArchive ----------
+
+This class represents an open zip archive. This class inherits all the methods of a ZipItem, which represents a file or file hierarchy within the archive. The ZipItem class has methods for loading, expanding, removing files, so the ZipArchive itself does not duplicates of these methods. The methods that are unique to the ZipArchive class are: 
+
+constructor (archive as FolderItem)
+
+  Create a zip archive from a folderitem. If the folderitem exists it will
+  be opened and parsed, otherwise a new empty archive will be created. The
+  empty archive is not technically a valid zip file, and if no files are
+  added to it, it cannot be opened by any other program.
+
+delete ([progress as ProgressMonitor])
+
+  Delete the archive contents. The actual archive file itself is not
+  removed. The deletion may take a long time if the archive has a lot of
+  files in it. The optional 'progress' parameter allows you to track the
+  progress of the deletion. Note that because deletion is done
+  synchronously, you will need to call the function from a separate thread
+  if you want asynchronous behaviour.
+
+setCompressionOptions (options as CompressionOptions)
+
+  Use this function to set the compression options for files added to the
+  archive. The parameter is a compressionoptions structure.
+
+getFileType () as FileType
+
+  Get the file type for a zip archive. This is a shared method, so can be
+  called without needing to instantiate a ZipArchive.
+
+ZipItem --------------
+
+This class forms the core of the RBZ library, and does most of the work. Each ZipItem in the archive can be treated as an archive in its own right, providing methods for adding, removing and expanding child items. Also, all methods of this class are equally applicable to the archive as a whole.
+
+You should never instantiate a ZipItem yourself - they are created automatically by the parent archive.
+
+addChild (item as FolderItem, [comment as String], [options as CompressionOptions], [progress as ProgressMonitor])
+
+  Add a file or folder to the item. You can add an optional text comment
+  for the item with the 'comment' parameter. The 'options' parameter allows
+  you to override the compression options used by the archive. The optional
+  'progress' parameter can be used to get feedback on the progress as the
+  file is compressed. Note that because compression is done synchronously,
+  you will need to call the function from a separate thread if you want
+  asynchronous behaviour.
+
+delete ([progress as ProgressMonitor])
+
+  Delete the item and its contents from the archive. The deletion may take
+  a long time if the item has a lot of children. The optional 'progress'
+  parameter allows you to track the progress of the deletion. Note that
+  because deletion is done synchronously, you will need to call the
+  function from a separate thread if you want asynchronous behaviour.
+
+expand (destinationDirectory as folderItem, [options as ExpansionOptions], [progress as ProgressMonitor]
+
+  Expand the item into the specified destination directory. The 'options'
+  parameter allows you to specify how the file is decompressed. The
+  optional 'progress' parameter allows you to track the progress of the
+  expansion. Note that because expansion is done synchronously, you will
+  need to call the function from a separate thread if you want asynchronous
+  behaviour.
+
+getArchive () as ZipArchive
+
+  Get a reference to the parent archive for the item.
+
+getParent () as ZipItem
+
+  Get a reference to the parent item. The item returned may be a ZipArchive 
+  if the item is in the root directory of the archive.
+
+getChildren () as ZipItem()
+
+  Get the children of the item.
+
+getComment () as String
+
+  Get the item comment. Returns a blank string if no comment was set.
+
+getCompressedSize () as UInt64
+
+  Get the size of the compressed data for the item. If the item is a
+  directory it will return the total size of all children. For an empty
+  directory the size will be zero.
+
+getUncompressedSize () as UInt64
+ 
+  Get the size of the uncompressed file. If the item is a directory it will
+  return the total size of all children. For an empty directory the size
+  will be zero.
+
+getCompressionOptions (byref options as CompressionOptions)
+
+  Get the compression options used for the item.
+
+getExpansionOptions (byref options as ExpansionOptions)
+
+  Get the expansion options used for the item.
+
+setExpansionOptions (options as ExpansionOptions)
+
+  Set the expansion options used for the item. This will override the
+  options set for the archive.
+
+getModified () as Date
+
+  Return the modified date for the item.
+
+getName () as String
+
+  Get the file or folder name for the item.
+
+getPath () as String
+
+  Get the file path for the item.
+
+isDirectory () as Boolean
+
+  Return true if the item is a directory, and false if not.
+
+ZipProgress -----------
+
+This class is used internally by the ZipArchive to track progress of compression, expansion and deletion operations. You should not use this class in your code, as its interface and behaviour is subject to change without notification.
+
+
+Interfaces
+------------------------------------------------------------
+
+ProgressMonitor -----------
+
+The progress monitor interface is used as a callback for lengthy operations. It has a single method that is used to notify progress.
+
+update (complete as Double)
+
+  This method is called by the ZipItem to indicate progress of an
+  operation. The value ranges between 0.0 and 1.0, with 1.0 indicating that 
+  the operation is complete.
+
+
+Structures
+------------------------------------------------------------
+
+CompressionOptions -----------
+
+This structure is used to specify the compression options for files stored in the archive. It has the following properties:
+
+method as CompressionMethod
+
+  This is the method used to compress file data. It is an enumeration of
+  type CompressionMethod, which is defined by the RBZ library.
+
+deflateLevel as DeflateLevel
+
+  This is the compression level to use when using the Deflate algorithm for
+  compression. It is an enumeration of type DeflateLevel, which is defined
+  by the RBZ library.
+
+deflateWindow as UInt16
+
+  This is the maximum block size used when compressing files. Change this
+  to balance compression speed and memory usage against the size of the
+  compressed data.
+
+ExpansionOptions -----------
+
+This structure is used to specify the expansion options for files stored in the archive. It has the following properties:
+
+ignoreChecksum as Boolean
+
+  Specify whether the checksum should be verified when expanding the file.
+  This property is currently ignored, but will be supported in future 
+  versions.
+
+replaceFiles as Boolean
+
+  Specify whether to overwrite files in the destination directory when 
+  expanding. If set to false the files will be renamed using an incremental 
+  numbering scheme.
+
+ignoreErrors as Boolean
+
+  Specify whether errors such as file corruption should be ignored during
+  expansion. This property is currently ignored, but will be supported in 
+  future versions.
+
+
+Enumerations
+------------------------------------------------------------
+
+CompressionMethod -----------
+
+This enumeration is used to store the compression method for a compressed item. It supports the following values:
+
+none
+
+  No compression used. File data is uncompressed.
+
+deflate
+
+  The Deflate compression algorithm. This is the default method used by 
+  most zip implementations.
+
+unsupported
+
+  An unrecognised compression method. Items compressed with one of these 
+  methods cannot be expanded by the RBZ library, however the archive can 
+  still be manipulated.
+
+DeflateLevel -----------
+
+This enumeration is used to store the compression level used by the deflate
+algorithm. Faster compression implies a poorer compression ratio, and vice versa.  It supports the following values:
+
+  maximum
+  normal
+  fast
+  fastest
+
+
+The MBS Plugin
+------------------------------------------------------------
+
+For compression, the RBZ library relies on the Monkeybread (MBS) plugin. This plugin is not needed for manipulating archives, or creating uncompressed archives.
+
+If you attempt to use the program without the MBS plugin installed
+you will get errors however. In order to avoid this, set the useMBS constant in the ZipArchive class to 'false'.
+
+
+Known Issues
+------------------------------------------------------------
+
+Currently there is no error handling for the RBZ library. Any errors will result in either silent failure, or a crash in extreme cases. This will be resolved in a future version.
+
+There is currently no thread synchronisation. You must therefore take care when calling functions that manipulate the archive from a thread. It is safe to expand multiple files simultaneously, however attempting to delete or add more than one file at a time, or to expand an item while a delete or add operation is in progress will result in a crash. This will be resolved in a future version.
+
+There is currently no support for file permissions, or Macintosh resource forks. A solution will be added to handle both of these in a future version, however in the meantime the RBZ library will discard resource forks, and files will be restored with default permissions only.
+
+The current implementation of the checksum calculation in the RBZ library is quite slow. As a result, creating uncompressed archives without using the MBS plugin is often very slow. We hope to correct this in a future version by using a better algorithm.
+
+
+Future Development
+------------------------------------------------------------
+
+Future plans for the RBZ library include better thread handling, support for file permissions and Macintosh resource forks and zip64 support for file sizes greater than 4GB.

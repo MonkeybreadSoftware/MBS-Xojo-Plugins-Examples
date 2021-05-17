@@ -1,0 +1,27 @@
+#!/bin/bash
+
+xattr -cr Builds\ -\ iCloud\ Example.rbp
+
+# you may need to change path ane project name
+
+
+
+
+# we use cat to get certificate names from a file as those names change every year...
+
+certificate="$(cat ~/Library/Preferences/currentcertificate.txt)"
+# certificate="my great company"
+echo "using certificate: $certificate"
+
+
+
+# now sign all parts
+codesign -f --sign "$certificate" Builds\ -\ iCloud\ Example.rbp/Mac\ OS\ X\ \(Cocoa\ Intel\)/iCloud\ Example.app/Contents/Frameworks/*.dylib
+codesign -f --sign "$certificate" Builds\ -\ iCloud\ Example.rbp/Mac\ OS\ X\ \(Cocoa\ Intel\)/iCloud\ Example.app/Contents/Frameworks/*.framework
+codesign -f --sign "$certificate" --entitlements test.entitlements Builds\ -\ iCloud\ Example.rbp/Mac\ OS\ X\ \(Cocoa\ Intel\)/iCloud\ Example.app
+
+
+
+# verify
+spctl -a -v Builds\ -\ iCloud\ Example.rbp/Mac\ OS\ X\ \(Cocoa\ Intel\)/iCloud\ Example.app
+

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rsm:CrossIndustryInvoice xmlns:rsm="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100" xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:100" xmlns:ram="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<rsm:ExchangedDocumentContext>
+		<ram:GuidelineSpecifiedDocumentContextParameter>
+			<ram:ID>
+				urn:factur-x.eu:1p0:minimum
+			</ram:ID>
+		</ram:GuidelineSpecifiedDocumentContextParameter>
+	</rsm:ExchangedDocumentContext>
+	<rsm:ExchangedDocument>
+		<ram:ID>
+			FF2-0007
+		</ram:ID>
+		<ram:TypeCode>
+			380
+		</ram:TypeCode>
+		<ram:IssueDateTime>
+			<udt:DateTimeString format="102">
+				20190517
+			</udt:DateTimeString>
+		</ram:IssueDateTime>
+	</rsm:ExchangedDocument>
+	<rsm:SupplyChainTradeTransaction>
+		<ram:ApplicableHeaderTradeAgreement>
+			<ram:SellerTradeParty>
+				<ram:Name>
+					SporDémo où Benoît
+				</ram:Name>
+				<ram:SpecifiedLegalOrganization>
+					<ram:ID schemeID="0002">
+						siretdemo
+					</ram:ID>
+				</ram:SpecifiedLegalOrganization>
+				<ram:PostalTradeAddress>
+					<ram:CountryID>
+						FR
+					</ram:CountryID>
+				</ram:PostalTradeAddress>
+				<ram:SpecifiedTaxRegistration>
+					<ram:ID schemeID="VA">
+						tvademo
+					</ram:ID>
+				</ram:SpecifiedTaxRegistration>
+			</ram:SellerTradeParty>
+			<ram:BuyerTradeParty>
+				<ram:Name>
+					CORDONNERIE YVAN
+				</ram:Name>
+				<ram:SpecifiedLegalOrganization>
+					<ram:ID schemeID="0002">
+						12345675400002
+					</ram:ID>
+				</ram:SpecifiedLegalOrganization>
+				<ram:PostalTradeAddress>
+					<ram:CountryID>
+						FR
+					</ram:CountryID>
+				</ram:PostalTradeAddress>
+				<ram:SpecifiedTaxRegistration>
+					<ram:ID schemeID="VA">
+						FR62651234567
+					</ram:ID>
+				</ram:SpecifiedTaxRegistration>
+			</ram:BuyerTradeParty>
+			<ram:BuyerOrderReferencedDocument>
+				<ram:IssuerAssignedID>
+				</ram:IssuerAssignedID>
+			</ram:BuyerOrderReferencedDocument>
+		</ram:ApplicableHeaderTradeAgreement>
+		<ram:ApplicableHeaderTradeDelivery>
+			<ram:ActualDeliverySupplyChainEvent>
+				<ram:OccurrenceDateTime>
+					<udt:DateTimeString format="102">
+						20190517
+					</udt:DateTimeString>
+				</ram:OccurrenceDateTime>
+			</ram:ActualDeliverySupplyChainEvent>
+		</ram:ApplicableHeaderTradeDelivery>
+		<ram:ApplicableHeaderTradeSettlement>
+			<ram:InvoiceCurrencyCode>
+				EUR
+			</ram:InvoiceCurrencyCode>
+			<ram:SpecifiedTradeSettlementHeaderMonetarySummation>
+				<ram:LineTotalAmount>
+					293.27
+				</ram:LineTotalAmount>
+				<ram:TaxBasisTotalAmount>
+					293.27
+				</ram:TaxBasisTotalAmount>
+				<ram:TaxTotalAmount currencyID="EUR">
+					58.66
+				</ram:TaxTotalAmount>
+				<ram:GrandTotalAmount>
+					351.93
+				</ram:GrandTotalAmount>
+				<ram:DuePayableAmount>
+					351.93
+				</ram:DuePayableAmount>
+			</ram:SpecifiedTradeSettlementHeaderMonetarySummation>
+		</ram:ApplicableHeaderTradeSettlement>
+	</rsm:SupplyChainTradeTransaction>
+</rsm:CrossIndustryInvoice>

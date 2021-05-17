@@ -1,0 +1,1 @@
+codesign -f -s "Mac Developer: Christian Schmitz (AC4MQK4WSK)" --entitlements "Sandbox Files.entitlements" "Sandbox Files.app"

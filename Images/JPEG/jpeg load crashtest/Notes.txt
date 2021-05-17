@@ -1,0 +1,1 @@
+Hi,RB crashes if the picture test.jpg is opened.This picture is copied with some missing bytes from bild.jpg.Reported using Realbugs as Bug No. 75350.PS: Mac OS X 10.1.3 with QT 5 Pro.MfgChristian Schmitz

@@ -1,0 +1,19 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=ImagePng
+		DocIcon=PNG Test.xojo_resources;&h0
+		Extension=.png
+		Flags=&h0
+		MacCreator=????
+		MacType=PNGf
+		Name=image/png
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

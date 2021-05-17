@@ -1,0 +1,21 @@
+#!/bin/bash
+
+mv Builds\ -\ Helper.xojo_binary_project/Mac\ OS\ X\ \(Cocoa\ Intel\)/Helper.app .
+
+codesign -f --sign "Mac Developer: Christian Schmitz (AC4MQK4WSK)" Helper.app/Contents/Frameworks/*.dylib
+codesign -f --sign "Mac Developer: Christian Schmitz (AC4MQK4WSK)" Helper.app/Contents/Frameworks/*.framework
+
+codesign -f --deep --sign "Mac Developer: Christian Schmitz (AC4MQK4WSK)" Helper.app
+
+
+mv Builds\ -\ MainApp.xojo_binary_project/Mac\ OS\ X\ \(Cocoa\ Intel\)/main.app .
+
+mkdir main.app/Contents/Library
+mkdir main.app/Contents/Library/LaunchServices
+cp -R Helper.app main.app/Contents/Library/LaunchServices/com.mycompany.helper.app
+
+codesign -f --sign "Mac Developer: Christian Schmitz (AC4MQK4WSK)" main.app/Contents/Frameworks/*.dylib
+codesign -f --sign "Mac Developer: Christian Schmitz (AC4MQK4WSK)" main.app/Contents/Frameworks/*.framework
+codesign -f --sign "Mac Developer: Christian Schmitz (AC4MQK4WSK)" main.app
+
+

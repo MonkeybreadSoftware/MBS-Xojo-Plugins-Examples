@@ -1,0 +1,98 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=exe
+		Extension=.exe
+		Flags=&h0
+		MacCreator=????
+		MacType=APPL
+		Name=application
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=link
+		Extension=.lnk
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=link
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Icon
+		Extension=.ico
+		Flags=&h0
+		MacCreator=????
+		MacType=ICON
+		Name=icon
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=dll
+		Extension=.dll
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=dll
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Any
+		Extension=
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=special/any
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Url
+		Extension=.url
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=url
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

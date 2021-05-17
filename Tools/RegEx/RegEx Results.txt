@@ -1,0 +1,16 @@
+
+RB needs:
+
+179.3s
+199.9s
+295.4s
+
+MBS Plugin needs:
+
+0.1s
+0.1s
+0.1s
+
+for a ReplaceAll on my 2 MB example tex file.
+
+RB is doing 97% of time doing memory copy and 2% memory management and the rest it is doing the real work.

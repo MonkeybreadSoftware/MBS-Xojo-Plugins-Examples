@@ -1,0 +1,66 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=ApplicationMsword
+		Extension=.doc;.docx
+		Flags=&h0
+		MacCreator=MSWD
+		MacType=WDBN
+		Name=application/msword
+		UTI=com.microsoft.word.doc
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=ApplicationRtf
+		Extension=.rtf
+		Flags=&h0
+		MacCreator=MSWD
+		MacType=TEXT
+		Name=application/rtf
+		UTI=public.rtf
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=TextHtml
+		Extension=.htm;.html
+		Flags=&h0
+		MacCreator=????
+		MacType=TEXT
+		Name=text/html
+		UTI=public.html
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Text
+		Extension=.asc;.ascii;.bas;.c;.class;.cp;.cpp;.h;.hp;.hpp;.i3;.java;.m2;.m3;.mak;.text;.txt
+		Flags=&h0
+		MacCreator=????
+		MacType=TEXT
+		Name=text/plain
+		UTI=public.text
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

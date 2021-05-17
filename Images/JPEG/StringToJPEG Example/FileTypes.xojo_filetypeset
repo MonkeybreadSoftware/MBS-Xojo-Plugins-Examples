@@ -1,0 +1,34 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=ImageJpeg
+		Extension=.jfif;.jpe;.jpeg;.jpg
+		Flags=&h0
+		MacCreator=prvw
+		MacType=JPEG
+		Name=image/jpeg
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=ImageJpeg2
+		Extension=.jfif;.jpe;.jpeg;.jpg
+		Flags=&h0
+		MacCreator=ogle
+		MacType=JPEG
+		Name=image/jpeg2
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

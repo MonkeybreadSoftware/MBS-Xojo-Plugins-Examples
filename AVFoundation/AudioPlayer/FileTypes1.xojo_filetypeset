@@ -1,0 +1,114 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=Mp3
+		Extension=.mp3;.swa
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=Mp3 
+		Name=audio/mp3
+		UTI=public.mp3
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioM4a
+		Extension=.m4a
+		Flags=&h0
+		MacCreator=hook
+		MacType=M4A 
+		Name=audio/m4a
+		UTI=public.mpeg-4-audio
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioM4b
+		Extension=.m4b
+		Flags=&h0
+		MacCreator=hook
+		MacType=M4B 
+		Name=audio/m4b
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioMpeg
+		Extension=.mpeg;.mpg;.m1s;.m1a;.mp2;.mpm;.mpa;.m2a;.mp3;.swa
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=MPEG
+		Name=audio/mpeg
+		UTI=public.mpeg
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioMpeg3
+		Extension=.mp3;.swa
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=Mp3 
+		Name=audio/mpeg3
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioAac
+		Extension=.aac;.adts
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=adts
+		Name=audio/aac
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioAiff
+		Extension=.aiff;.aif;.aifc;.cdda
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=AIFF
+		Name=audio/aiff
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

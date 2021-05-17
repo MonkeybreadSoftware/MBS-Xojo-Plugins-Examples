@@ -1,0 +1,82 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=Quicktime
+		Extension=.moov;.mov;.qt;.mqv
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=MooV
+		Name=video/quicktime
+		UTI=com.apple.quicktime-movie
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Mpeg
+		Extension=.mpe;.mpeg;.mpg;.m1s;.m1v;.m1a;.m75;.m15;.mp2;.mpm;.mpv;.mpa
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=MPEG
+		Name=video/mpeg
+		UTI=public.mpeg
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoMp4
+		Extension=.mp4
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=mpg4
+		Name=video/mp4
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXM4v
+		Extension=.m4v
+		Flags=&h0
+		MacCreator=hook
+		MacType=M4V 
+		Name=video/x-m4v
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoAvi
+		Extension=.avi;.vfw;.avi
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=VfW 
+		Name=video/avi
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

@@ -1,0 +1,154 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf370
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww16160\viewh16280\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \
+How to stream a MacOS/X file into an Oracle BLOB\
+\
+1. Prepare the client system\
+\
+Download and install the Oracle Instant Client; you should also install Oracle SQL Developer.\
+\
+For the command line tool SQL*Plus and for Oracle Developer, you need the Oracle connect string. This looks like\
+\
+(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.244.11)(PORT=1521))(CONNECT_DATA=(SID=XE)))\
+\
+Replace the host address with the name or address of your Oracle server. You may also use a different SID; "XE" is the default for Oracle XE.\
+\
+To connect to the Oracle server from the RealBasic IDE or your executable, you must set a couple of system variables before running the program.\
+\
+If you're testing from the RealStudio IDE, the least intrusive way is to enter the following commands via terminal once per login session:\
+\
+launchctl setenv DYLD_LIBRARY_PATH /Applications/Oracle/instantclient_10_2\
+launchctl setenv ORACLE_HOME /Applications/Oracle/instantclient_10_2\
+launchctl setenv NLS_LANG .AL32UTF8\
+\
+Adjust the paths as required.\
+\
+2. Create a table containing the BLOB column (from SQL*Plus or SQL Developer)\
+\
+create table mbs_blobtest (id_blobtest varchar2(32) default sys_guid() not null, file_blob blob);\
+\
+3. Create a stored procedure to store the blob\
+\
+create or replace\
+PACKAGE mbs_p_blobtest AS \
+ procedure append_blob (\
+   a_id_blobtest mbs_blobtest.id_blobtest%type,\
+   a_blob blob);\
+END mbs_p_blobtest;\
+\
+create or replace\
+PACKAGE BODY mbs_p_blobtest AS\
+ procedure append_blob (\
+   a_id_blobtest mbs_blobtest.id_blobtest%type,\
+   a_blob blob)\
+ as\
+   v_blob blob;\
+ begin\
+   select file_blob into v_blob from mbs_blobtest where id_blobtest = a_id_blobtest for update;\
+   if v_blob is null then\
+     v_blob := a_blob;\
+   else\
+     dbms_lob.append (v_blob, a_blob);\
+   end if;\
+   update mbsblob_test set file_blob = v_blob where id_blobtest = a_id_blobtest;\
+ end append_blob;\
+END MH_P_DRUCKVORLAGE;\
+\
+4. RB code step by step\
+\
+4.1 Declare variables\
+\
+ Dim vDB As New SQLDatabaseMBS\
+ Dim vLib As New FolderItem("/Applications/Oracle/instantclient_10_2/libclntsh.dylib.10.1", FolderItem.PathTypeShell)\
+ Dim vDatabaseName as string = "oracle:(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.244.11)(PORT=1521))(CONNECT_DATA=(SID=XE)))"\
+ Dim vUserID as string = "scott"\
+ Dim vPassword as string = "tiger"\
+ Dim vFile As FolderItem\
+ Dim vFileType As New FileType\
+ Dim vBlock as New MemoryBlock(2000)\
+ Dim vSQL As String\
+ Dim vStream As BinaryStream\
+ Dim vIDBlobTest As String\
+ Dim vPreparedStatement As PreparedSQLStatement\
+\
+- vDB holds the pointer to the database class \
+- vLib points to a library in DYLD_LIBRARY_PATH.\
+- vDatabaseName is the connect string prefixed by "oracle:".\
+- vUserID and vPassword must be set according to your requirements.\
+- vFile points to the file to be stored in the database.\
+- vFileType will be set in this example to filter PDF files.\
+- vBlock holds the blocks to be streamed to the database.\
+- vSQL will be used to store the raw SQL statements\
+- vIDBlobTest will hold the column "id_blobtest".\
+\
+\
+4.2 Connect to Oracle\
+\
+ vDB.SetFileOption SQLConnectionMBS.kOptionLibraryOracle, vLib\
+ vDB.DatabaseName = vDatabaseName\
+ vDB.UserName = vUserID\
+ vDB.Password = vPassword\
+ if vDB.Connect then\
+   vDB.AutoCommit = vDB.kAutoCommitOff\
+ else\
+   MsgBox vDB.ErrorMessage\
+   Quit\
+ end if\
+\
+4.3 Open the source file\
+\
+ vFileType.Name = "application/pdf"\
+ vFileType.MacType = "PDF"\
+ vFileType.Extensions = ".pdf"\
+\
+ vFile = GetOpenFolderItem(vFileType)\
+ If vFile <> Nil And vFile.Exists Then\
+   vStream= BinaryStream.Open(vFile, False)\
+   \'85 (see 4.4 ff)\
+ end if\
+\
+4.4 Optional: Delete existing rows\
+\
+   vSQL = "delete from mbsblob_test"\
+   vDB.SQLExecute vSQL\
+   vDB.Commit\
+\
+4.5 Insert a new row\
+\
+   vSQL = "insert into  mbsblob_test (id_blobtest) values (:1)"\
+   vPreparedStatement = vDB.Prepare(vSQL)\
+   vIDBlobTest = "1"\
+   vPreparedStatement.BindType(0, SQLPreparedStatementMBS.kTypeString)\
+   vPreparedStatement.SQLExecute(vIDBlobTest)\
+\
+4.6 Prepare the blob update statement\
+\
+   vSQL = "begin mbs_p_blobtest.append_blob(:ID_BLOBTEST, :FILE_BLOB); end;"\
+   vPreparedStatement = vDB.Prepare(vSQL)\
+   vPreparedStatement.BindType(0, SQLPreparedStatementMBS.kTypeString)\
+   vPreparedStatement.BindType(1, SQLPreparedStatementMBS.kTypeBlob)\
+\
+4.7 Read the input file block by block and store it to the database\
+\
+   Do\
+     vBlock = vStream.Read(2000)\
+     vPreparedStatement.SQLExecute vIDBlobTest, vBlock\
+     if vDB.Error then\
+       MsgBox vDB.ErrorMessage\
+       exit\
+     end if\
+   Loop Until vStream.EOF\
+\
+4.8 Close the inout stream and commit the changes to the database\
+\
+   vStream.Close\
+   vDB.Commit\
+\
+\
+\
+from Thomas Gutzmann\
+}

@@ -1,0 +1,10 @@
+Version 1.1
+
+- Fixed issue that caused test application to lock up.
+- Updated RBZ to work with latest MBS release.
+- Optimised CRC algorithm for uncompressed archives.
+- Removed redundant MemoryStream class.
+
+Version 1.0
+
+- Initial release.

@@ -1,0 +1,53 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=MyBinary
+		DocIcon=VirtualVolume Demo.xojo_resources;&h0
+		Extension=
+		Flags=&h0
+		MacCreator=TEST
+		MacType=bina
+		Name=myBinary
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=ImageGif
+		DocIcon=VirtualVolume Demo.xojo_resources;&hC
+		Extension=.gif
+		Flags=&h0
+		MacCreator=MSIE
+		MacType=GIFf
+		Name=image/gif
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=ImageJpeg
+		DocIcon=VirtualVolume Demo.xojo_resources;&h18
+		Extension=.jpg;.jpeg;.jpe
+		Flags=&h0
+		MacCreator=????
+		MacType=JPEG
+		Name=image/jpeg
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

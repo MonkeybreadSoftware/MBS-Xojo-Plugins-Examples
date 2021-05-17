@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/8.5.0/styles/solarized_light.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="https://markdown-it.github.io/index.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/2.4.1/lodash.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/highlight.js/8.5.0/highlight.min.js"></script>
+    <script src="https://markdown-it.github.io/markdown-it.js"></script>
+    <script src="https://twemoji.maxcdn.com/twemoji.min.js"></script>
+    <script src="index.js"></script>
+
+	<script type='text/javascript'>
+	
+function Convert() 
+{
+	try 
+	{
+		var text = document.formtest.input.value;
+		var result = window.md.render(text);
+		document.formtest.output.value = result;
+	 	return 'OK';
+	} 
+	catch (e) 
+	{ 
+		alert(e); 
+	}
+}
+	</script>
+</head>
+<body>
+<form name="formtest" id="formtest">
+
+<!--  two hidden fields -->
+<!-- style="display:none;"  -->
+<textarea id="input"  name="input"  style="display:none;"  ></textarea>
+<textarea id="output" name="output" style="display:none;"  ></textarea>
+
+
+</form>
+</body>
+</html>

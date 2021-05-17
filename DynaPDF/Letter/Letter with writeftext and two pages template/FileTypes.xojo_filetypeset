@@ -1,0 +1,35 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=Text
+		Extension=
+		Flags=&h0
+		MacCreator=R*ch
+		MacType=TEXT
+		Name=text
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Icc
+		DocIcon=Letter with writeftext and two pages template.xojo_resources;&h0
+		Extension=
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=icc
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+codesign -f --sign "Mac Developer: Christian Schmitz (AC4MQK4WSK)" --entitlements test.entitlements Builds\ -\ Push\ Notification\ RS\ 2011r4.rbp/Mac\ OS\ X\ \(Cocoa\ Intel\)/Push\ Notification.app
+

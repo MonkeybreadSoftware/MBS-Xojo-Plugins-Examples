@@ -1,0 +1,65 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww14400\viewh17160\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b \cf0 32/64bit\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b0 \cf0 \
+Please make sure the libraries match the application in 32/64bit.\
+\
+VLC Version\
+\
+MBS Plugin seems to work fine with VLC versions 2.0.9 and 3.0.4. Other versions may work, too.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b0 \cf0 \
+We have code in our examples to copy libs on startup. So for normal debugging, you only need to have VLC app installed on Mac or Windows.
+\b \
+\
+How to patch application with VLC libraries\
+\
+On Mac:\
+\
+
+\b0 Open VLC.app with right click and "show package contents".\
+Inside Contents/MacOS you find three folders: lib and plugins.\
+\
+You copy those into your Mac application.\
+Also you need to move the plugin files inside your Mac application from frameworks folders to this lib folder.\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b \cf0 Notes for Video Playback:\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b0 \cf0 VLC supports several interfaces and allows embedding video on different native windows. But this must be enabled so it's compiled into the libraries.\
+\
+So VLCMediaPlayerMBS class has a HWND property for a Windows window, a XWindow property for a Linux window as well as AGL and NSObject properties. Those can be used to play directly into a Canvas.\
+\
+We added VLCMediaPlayerMBS methods so you can pick the current frame from a timer and display it as needed. You may miss frames due some other parts of your application may block the main thread, like an open menu on Mac.\
+\
+Drawing in CGContext of window is no longer possible or MacOS 10.14 Mojave!\
+\
+VideoSetCallback(width as integer, height as integer, ContextHandle as Integer)\
+\
+can be used in two modes on Mac:\
+- Mac: You pass CGContext handle and we draw directly into context. (Fastest)\
+- Mac: You pass CGContext = 0 and you can get a Copy of CGImageMBS with CopyPicture method.\
+\
+VideoSetCallback(width as integer, height as integer)\
+\
+is the cross platform way for rendering in buffer. You get a copy of buffer with CopyMemory or as picture with CopyPicture.\
+\
+\
+}

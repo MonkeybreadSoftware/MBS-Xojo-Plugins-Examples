@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Please change path for your FileMaker version/app/runtime
+#
+# Please get registered Developer with Apple, get your certificate for Developer ID and put your name down here in the script.
+#
+# Install Xcode and run once to get command line tools.
+# Drop this script file on terminal and press return to run it.
+
+export CertificateName="Apple Development: Christian Schmitz (AC4MQK4WSK)"
+
+ScriptFolder=$(dirname "$0")
+cd "$ScriptFolder"
+
+cd "Builds - Live Barcode Detection iOS/iOS"
+
+codesign -f -s "$CertificateName" Live\ Barcode\ Detection\ iOS.app/Frameworks/*.framework
+codesign -f -s "$CertificateName" *.app
+

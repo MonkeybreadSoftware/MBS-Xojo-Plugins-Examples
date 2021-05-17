@@ -1,0 +1,74 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+\cocoascreenfonts1{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww18680\viewh18160\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\b\fs32 \cf0 About SQL Plugin\
+\
+
+\b0\fs24 The MBS REALbasic SQL Plugin implements a native interface for our database library. But we also provide a SQLDatabaseMBS class which is compatible to the existing database and recordset classes in REAL Studio. This enables you to use our plugin with the report engine. \
+But as different database servers have different commands, we do not implement every feature. So if you need one of those unimplemented features, please email.\
+
+\b\fs32 \
+For the SQLDatabaseMBS class:
+\b0\fs24 \
+\
+
+\b Properties:
+\b0 \
+\
+DatabaseName: Works.\
+ErrorMessage: Works.\
+UserName: Works.\
+Error	Host: Works.\
+ErrorCode: Works.\
+Password: Works.\
+\
+
+\b Methods:
+\b0 \
+\
+Close: Works\
+InsertRecord: Works\
+Commit: Works, but has only effect if you have an open transaction.\
+Rollback: Works, but has only effect if you have an open transaction.\
+Connect: Works.\
+SQLExecute: Works.\
+FieldSchema: Not implemented.\
+SQLSelect: Works.\
+GetProperty: Same as Option function.\
+TableSchema: Not implemented.\
+IndexSchema: Not implemented.\
+\
+\pard\tx566\tx1133\tx1700\tx2260\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b\fs32 \cf0 For the RecordSet class:
+\b0\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+
+\b Properties:
+\b0 \
+\
+BOF: Not implemented.\
+FieldCount: Works.\
+EOF: Implemented. Set to true if MoveNext fails.\
+RecordCount: Always -1 as we don't know the number of records.\
+\
+
+\b Methods:
+\b0 \
+\
+Close: Works\
+MoveFirst: Works for scrollable cursors.\
+ColumnType: Works\
+MoveLast: Works for scrollable cursors.\
+DeleteRecord: Not implemented. Gives Error -1.\
+MoveNext: Works\
+Edit: Not implemented. Gives Error -1.\
+MovePrevious: Works for scrollable cursors.\
+Field: Works\
+IdxField: Works\
+Update: Not implemented. Gives Error -1.\
+}

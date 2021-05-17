@@ -1,0 +1,36 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=C2v
+		DocIcon=HASP HL RealBasic Sample.xojo_resources;&h0
+		Extension=c2v
+		Flags=&h0
+		MacCreator=????
+		MacType=text
+		Name=c2v
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=V2c
+		DocIcon=HASP HL RealBasic Sample.xojo_resources;&hC
+		Extension=v2c
+		Flags=&h0
+		MacCreator=????
+		MacType=text
+		Name=v2c
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

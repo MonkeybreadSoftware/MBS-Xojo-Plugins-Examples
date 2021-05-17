@@ -1,0 +1,36 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=VideoQuicktime
+		DocIcon=Delay.xojo_resources;&h0
+		Extension=.moov;.mov;.qt
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=MooV
+		Name=video/quicktime
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoMpeg
+		DocIcon=Delay.xojo_resources;&hC
+		Extension=.mpe;.mpeg;.mpg;.m1s;.m1v;.m1a;.m75;.m15;.mpm;.mpv;.mpa;.mp2
+		Flags=&h0
+		MacCreator=????
+		MacType=MPEG
+		Name=video/mpeg
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

@@ -1,0 +1,36 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=Any
+		DocIcon=openwithapp test.xojo_resources;&h0
+		Extension=
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=any
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Appx
+		DocIcon=openwithapp test.xojo_resources;&hC
+		Extension=.app
+		Flags=&h0
+		MacCreator=????
+		MacType=APPL
+		Name=appx
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

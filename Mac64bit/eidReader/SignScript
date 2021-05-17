@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#
+# Please get registered Developer with Apple, get your certificate for Developer ID and put your name down here in the script.
+#
+# Install Xcode and run once to get command line tools.
+# Drop this script file on terminal and press return to run it.
+#
+# sudo may be needed!
+
+export AppName="eidReader.app"
+export CertificateName="Developer ID Application: Christian Schmitz Software GmbH"
+
+
+ScriptFolder=$(dirname "$0")
+
+cd "$ScriptFolder"
+cd Builds\ -\ eidReader.xojo_binary_project/OS\ X\ 64\ bit/
+
+# remove finder info which may block signing
+xattr -r -d com.apple.FinderInfo "$AppName"
+
+# codesign
+codesign -f -s "Developer ID Application: Christian Schmitz Software GmbH" eidReader.app/Contents/Frameworks/*
+codesign --entitlements ../../test.entitlements  -f -s "Developer ID Application: Christian Schmitz Software GmbH" "$AppName"
+
+# check and see if it is accepted
+spctl -a -v "$AppName"
+
+
+

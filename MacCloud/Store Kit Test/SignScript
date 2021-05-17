@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# please adjust path if needed
+ScriptFolder=$(dirname "$0")
+
+cd "$ScriptFolder"
+
+
+xattr -cr Store\ Kit\ Test.app
+codesign -f -s "Developer ID Application: Christian Schmitz Software GmbH (RZ52899P4B)" Store\ Kit\ Test.app/Contents/Frameworks/*.dylib
+codesign -f -s "Developer ID Application: Christian Schmitz Software GmbH (RZ52899P4B)" Store\ Kit\ Test.app/Contents/Frameworks/*.framework
+codesign -f -s "Developer ID Application: Christian Schmitz Software GmbH (RZ52899P4B)" Store\ Kit\ Test.app
+
+spctl -a -v Store\ Kit\ Test.app
+
+zip -9 -r -q 'StoreKitTest.zip' 'Store Kit Test.app'
+

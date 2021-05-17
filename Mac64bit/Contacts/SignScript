@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd "/Users/cs/Desktop/Contacts/Builds - Contacts Test.rbp/OS X 64 bit"
+
+xattr -r -d com.apple.FinderInfo Contacts\ Test.app 
+codesign -f -s "Developer ID Application: Christian Schmitz Software GmbH" Contacts\ Test.app/Contents/Frameworks/*
+codesign --entitlements ../../test.entitlements  -f -s "Developer ID Application: Christian Schmitz Software GmbH" Contacts\ Test.app
+
+spctl -a -v Contacts\ Test.app

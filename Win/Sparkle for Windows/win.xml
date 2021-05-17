@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+    <channel>
+        <title>WinSparkle Test Appcast</title>
+        <description>Most recent updates to WinSparkle Test</description>
+        <language>en</language>
+        <item>
+            <title>Version 2.0</title>
+            <sparkle:releaseNotesLink>
+                https://monkeybreadsoftware.de/UpdaterTest/description.html
+            </sparkle:releaseNotesLink>
+            <pubDate>Fri, 06 Feb 2016 22:49:00 +0100</pubDate>
+            <enclosure url="https://monkeybreadsoftware.de/UpdaterTest/UpdaterExampleWin.exe"
+                       sparkle:version="2.0"
+                       length="1145333"
+                       type="application/octet-stream" />
+        </item>
+    </channel>
+</rss>

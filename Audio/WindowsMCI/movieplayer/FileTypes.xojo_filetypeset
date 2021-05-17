@@ -1,0 +1,226 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=VideoAvi
+		Extension=.avi;.vfw
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=video/avi
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoFlc
+		Extension=.flc;.fli
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=FLI 
+		Name=video/flc
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoMpeg
+		Extension=.mpe;.m15;.m1s;.m1v;.m75;.mpeg;.mpg;.m1a;.mp2;.mpm;.mpv;.mpa
+		Flags=&h0
+		MacCreator=????
+		MacType=MPEG
+		Name=video/mpeg
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoMsvideo
+		Extension=.avi;.vfw
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=video/msvideo
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoQuicktime
+		Extension=.moov;.mov;.qt
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=MooV
+		Name=video/quicktime
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXDv
+		Extension=.dif;.dv
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=dvc!
+		Name=video/x-dv
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXMpeg
+		Extension=.mpeg;.mpg;.m1s;.m1v;.m1a;.m75;.m15;.mp2;.mpm;.mpv;.mpa
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=video/x-mpeg
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=VideoXMsvideo
+		Extension=.avi;.vfw
+		Flags=&h0
+		MacCreator=????
+		MacType=VfW 
+		Name=video/x-msvideo
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioAiff
+		Extension=.aiff;.aif;.aifc;.cdda
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=audio/aiff
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioBasic
+		Extension=.ul;.au;.snd;.ulw
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=ULAW
+		Name=audio/basic
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioMidi
+		Extension=.mid;.midi;.smf;.kar
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=audio/midi
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioMp3
+		Extension=.mp3
+		Flags=&h0
+		MacCreator=hook
+		MacType=MPG3
+		Name=audio/mp3
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioMpeg
+		Extension=.mp2;.mp3;.mpeg;.mpg;.m1s;.m1a;.mpm;.mpa
+		Flags=&h0
+		MacCreator=????
+		MacType=MPG2
+		Name=audio/mpeg
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioWav
+		Extension=.wav
+		Flags=&h0
+		MacCreator=????
+		MacType=????
+		Name=audio/wav
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

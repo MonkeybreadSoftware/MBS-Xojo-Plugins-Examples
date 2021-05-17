@@ -1,0 +1,98 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=AudioMp3
+		Extension=.mp3;.swa
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=Mp3 
+		Name=audio/mp3
+		UTI=public.mp3
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioMp4
+		Extension=.mp4
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=mpg4
+		Name=audio/mp4
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioAiff
+		Extension=.aiff;.aif;.aifc;.cdda
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=AIFF
+		Name=audio/aiff
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioWav
+		Extension=.wav;.bwf
+		Flags=&h0
+		MacCreator=TVOD
+		MacType=.WAV
+		Name=audio/wav
+		UTI=com.microsoft.waveform-audio
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXM4a
+		Extension=.m4a
+		Flags=&h0
+		MacCreator=hook
+		MacType=M4A 
+		Name=audio/x-m4a
+		UTI=public.mpeg-4-audio
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioXM4a1
+		Extension=.m4a
+		Flags=&h0
+		MacCreator=hook
+		MacType=M4A 
+		Name=audio/x-m4a
+		UTI=public.mpeg-4-audio
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

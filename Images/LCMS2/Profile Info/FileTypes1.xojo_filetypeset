@@ -1,0 +1,18 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=ICCProfile
+		Extension=.icc
+		Flags=&h0
+		MacCreator=
+		MacType=
+		Name=ICC Profile
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

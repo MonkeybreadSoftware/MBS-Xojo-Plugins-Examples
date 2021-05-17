@@ -1,0 +1,36 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=SpecialFolder
+		DocIcon=CFBundle example.xojo_resources;&h0
+		Extension=
+		Flags=&h0
+		MacCreator=MACS
+		MacType=fold
+		Name=special/folder
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=SpecialApplication
+		DocIcon=CFBundle example.xojo_resources;&hC
+		Extension=
+		Flags=&h0
+		MacCreator=????
+		MacType=APPL
+		Name=special/application
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

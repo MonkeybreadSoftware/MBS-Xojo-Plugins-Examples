@@ -1,0 +1,19 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=ImageTiff
+		DocIcon=Tiff Load To Channels.xojo_resources;&h0
+		Extension=.tif;.tiff
+		Flags=&h0
+		MacCreator=????
+		MacType=TIFF
+		Name=image/tiff
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

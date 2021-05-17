@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple JavaScript Controller</title>
+    <script type="text/javascript">
+ 
+       function playPause() {
+       var myVideo = document.getElementsByTagName('video')[0];
+       if (myVideo.paused)
+           myVideo.play();
+       else
+           myVideo.pause();
+       }
+ 
+       function makeBig() {
+       var myVideo = document.getElementsByTagName('video')[0];
+       myVideo.height = (myVideo.videoHeight * 2 ) ;
+       }
+ 
+       function makeNormal() {
+       var myVideo = document.getElementsByTagName('video')[0];
+       myVideo.height = (myVideo.videoHeight) ;
+       }
+ 
+    </script>
+  </head>
+ 
+  <body>
+     <div class="video-player" align="center">
+      <video poster="poster.jpg" >
+       <source src="myMovie.m4v" type="video/mp4" />
+      </video>
+      <br>
+      <a href="javascript:playPause();">Play/Pause</a> <br>
+      <a href="javascript:makeBig();">2x Size</a> |
+      <a href="javascript:makeNormal();">1x Size</a> <br>
+     </div>
+  </body>
+</html>

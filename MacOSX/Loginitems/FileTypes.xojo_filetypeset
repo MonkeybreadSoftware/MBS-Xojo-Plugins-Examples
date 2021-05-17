@@ -1,0 +1,36 @@
+#tag FileTypeSet
+	#tag FileType
+		CodeName=Application
+		DocIcon=Loginitems.xojo_resources;&h0
+		Extension=.app
+		Flags=&h0
+		MacCreator=????
+		MacType=APPL
+		Name=application
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=Folder
+		DocIcon=Loginitems.xojo_resources;&hC
+		Extension=
+		Flags=&h0
+		MacCreator=????
+		MacType=fold
+		Name=folder
+		UTI=
+		UTIConformsTo=,public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+#tag EndFileTypeSet

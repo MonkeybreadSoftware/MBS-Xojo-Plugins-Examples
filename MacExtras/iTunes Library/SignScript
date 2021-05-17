@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd Builds\ -\ iTunes\ Library.rbp/Mac\ OS\ X\ \(Cocoa\ Intel\)
+
+codesign -f -s "Developer ID Application: Christian Schmitz Software GmbH" iTunes\ Library.app/Contents/Frameworks/*
+codesign -f -s "Developer ID Application: Christian Schmitz Software GmbH" "iTunes Library.app"
+
